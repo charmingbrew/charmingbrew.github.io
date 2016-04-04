@@ -3,7 +3,7 @@ layout: post
 title: Dual signing Windows software
 ---
 
-![Online security by Danny Oosterveer]({{ site.baseurl }}/images/cc-locks.jpg)[https://www.flickr.com/photos/dannyoosterveer/7913182734]
+[![Online security by Danny Oosterveer]({{ site.baseurl }}/images/cc-locks.jpg)](https://www.flickr.com/photos/dannyoosterveer/7913182734)
 
 Starting in January 2016, Windows 7 and newer no longer trust new software signed using SHA-1 certificates. This means developers will need to sign new binaries, INFs and MSIs with SHA256 certificates and time stamps.
 
@@ -19,7 +19,3 @@ I have an extended validation signing token. Signtool will automatically try to 
     signtool sign /ac MSCV-VSClass3.cer /fd SHA256 /tr http://timestamp.globalsign.com/?signature=sha2 /td SHA256 /as /v "file.exe"
 
 The first command signs using SHA1 and the second signs using SHA256. The /as flag tells signtool to append the second signature and not overwrite the first signature.
-
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
-
-![_config.yml]({{ site.baseurl }}/images/config.png)
