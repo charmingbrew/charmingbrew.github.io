@@ -4,11 +4,11 @@ title: Dual signing Windows software
 ---
 Starting in January 2016, Windows 7 and newer no longer trust new software signed using SHA-1 certificates. This means developers will need to sign new binaries, INFs and MSIs with SHA256 certificates and time stamps.
 
-[![Online security by Danny Oosterveer]({{ site.baseurl }}/images/cc-locks.jpg)](https://www.flickr.com/photos/dannyoosterveer/7913182734)
+[![Online security by Danny Oosterveer]({{ site.baseurl }}/images/cc-locks.jpg) "Online security by Danny Oosterveer (CC BY-ND 2.0)"](https://www.flickr.com/photos/dannyoosterveer/7913182734)
 
 Unfortunately, Windows XP does not recognize SHA256 certificates or time stamps. This puts us in a bit of a bind. Luckily, you can handle this issue by dual signing your binaries and INFs. MSIs cannot be dual signed, though. I haven't figured out a solution to this issue yet. Currently, I just distribute two MSIs with different signatures.
 
-=== Dual Signing Files==
+### Dual Signing Files ###
 
 First, I like to add the Windows Kit bin directory to my path. I use these tools often, including signtool.exe needed for signing files: C:\Program Files (x86)\Windows Kits\8.1\bin\x64
 
