@@ -12,7 +12,7 @@ Unfortunately, Windows XP does not recognize SHA256 certificates or time stamps.
 
 First, I like to add the Windows Kit bin directory to my path. I use these tools often, including signtool.exe needed for signing files: C:\Program Files (x86)\Windows Kits\8.1\bin\x64
 
-I have an extended validation signing token. Signtool will automatically try to find the best possible certificate but if you have a .pfx file, add it using /f and /p for the password. My EV token requires the MSCV-VSClass3.cer file to be added in using the /ac flag.
+I have an extended validation signing token. This requires some middleware to verify the dongle and prompts for my password. Signtool will automatically try to find the best possible certificate but if you simply have a .pfx file, add it using /f and /p for the password. My EV token requires the MSCV-VSClass3.cer file to be added in using the /ac flag.
 
     signtool sign /ac MSCV-VSClass3.cer /t http://timestamp.verisign.com/scripts/timstamp.dll /v "file.exe"
     signtool sign /ac MSCV-VSClass3.cer /fd SHA256 /tr http://timestamp.globalsign.com/?signature=sha2 /td SHA256 /as /v "file.exe"
@@ -23,4 +23,4 @@ I also recommend verifying the signature afterwards using the following command:
 
     signtool verify /pa /all "file.exe"
 
-If this command should show two valid signatures, your software will be signed and ready to distribute.
+If this command lists two valid signatures, your software will be signed and ready to distribute.
