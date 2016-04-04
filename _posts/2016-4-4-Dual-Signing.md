@@ -2,10 +2,9 @@
 layout: post
 title: Dual signing Windows software
 ---
+Starting in January 2016, Windows 7 and newer no longer trust new software signed using SHA-1 certificates. This means developers will need to sign new binaries, INFs and MSIs with SHA256 certificates and time stamps.
 
 [![Online security by Danny Oosterveer]({{ site.baseurl }}/images/cc-locks.jpg)](https://www.flickr.com/photos/dannyoosterveer/7913182734)
-
-Starting in January 2016, Windows 7 and newer no longer trust new software signed using SHA-1 certificates. This means developers will need to sign new binaries, INFs and MSIs with SHA256 certificates and time stamps.
 
 Unfortunately, Windows XP does not recognize SHA256 certificates or time stamps. This puts us in a bit of a bind. Luckily, you can handle this issue by dual signing your binaries and INFs. MSIs cannot be dual signed, though. I haven't figured out a solution to this issue yet. Currently, I just distribute two MSIs with different signatures.
 
@@ -19,3 +18,9 @@ I have an extended validation signing token. Signtool will automatically try to 
     signtool sign /ac MSCV-VSClass3.cer /fd SHA256 /tr http://timestamp.globalsign.com/?signature=sha2 /td SHA256 /as /v "file.exe"
 
 The first command signs using SHA1 and the second signs using SHA256. The /as flag tells signtool to append the second signature and not overwrite the first signature.
+
+I also recommend verifying the signature afterwards using the following command:
+
+    signtool verify /pa /all "file.exe"
+
+If this command should show two valid signatures, your software will be signed and ready to distribute.
