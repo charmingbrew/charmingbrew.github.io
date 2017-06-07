@@ -4,13 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Hi! I'm Dane, a software developer for an adaptive optics company. I get to work on really neat projects with a huge variety of really smart people.
+Hi! I'm Dane, a software engineer and a maker.
 
-Professionally, I do most of my work in C++ on Windows. Visual Studio is where I spend most of my time at work. I also work with LabVIEW occasionally.
+I work for Charter Communications. I have experience developing C# and C++ desktop and server software for Windows, particularly software interacting with add-in hardware and data acquisition. I also have experience writing Python, Matlab and LabVIEW.
 
-Personally, I write in a lot of languages. Java is my main go-to language, but I also write C#, Python and C++ for projects. I love working on projects involving embedded systems and electronics.
+I'm a maker and some of my favorite hobbies include woodworking, 3D printing, and electronics. Building something neat is super satisfying and I hope to someday have a nice home shop to foster this creativity.
 
-I also volunteer for FIRST Robotics and Team 1619. I teach high school students how to program in a challenging sporting environment. It is by far one of the most fulfilling things I have ever done.
+I also volunteer for FIRST Robotics and Team 1619. I teach high school students how to program and build robots. It is by far one of the most fulfilling things I have ever done.
 
 ### Contact me
 
